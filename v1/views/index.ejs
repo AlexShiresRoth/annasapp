@@ -2,12 +2,28 @@
 <html>
   <head>
     <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
   </head>
   <body>
+    <nav class="navbar">
+      <a class= "extend-btn"><ion-icon name="menu"></ion-icon>Trips</a>
+      <ul class="trips">
+        <li>Mallorca</li>
+        <li>Puerto Rico</li>
+        <li>Costa Rica</li>
+      </ul>
+      <ul class="text-box">
+       <li><h4><%= title %></h4> </li>
+    </ul>
+    <ul class="buttons">
+      <li class="button-size"><ion-icon name="refresh"></ion-icon></li>
+      <li class="button-img"><ion-icon name="arrow-round-forward"></ion-icon></li>
+    </ul>
+    </nav>
     <div class="container">
       <div class="display img1"></div>
       <div class="display img2"></div>
@@ -22,12 +38,9 @@
       <div class="display img11"></div>
       <div class="display img12"></div>
     </div>
-    <div class="text-box">
-       <h1><%= title %></h1>
-      <p>Welcome to <%= title %></p>
-      <button class="button-img">Next Photo</button>
-    </div>
+    
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
     <script src="/javascripts/data.js"></script>
   </body>
 </html>

@@ -1,23 +1,84 @@
 html {
   font-family:'Open Sans';
-  color:#fff;
+  color:#212121;
 }
 body {
   padding: 0px;
   margin:0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Open Sans", Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction:column;
   justify-content: center;
   align-items: center;
   overflow:hidden;
 }
-h1{
-  font-size: 5em;
+h4{
+  font-size: 2em;
+  font-family: 'Open Sans';
+  font-weight: 300;
+  margin:0;
 }
 a {
   color: #00B7FF;
 }
+/*navigation */
+nav{
+  display: flex;
+  justify-content:space-between;
+  min-height:7vh;
+  max-height: 10vh;
+  width:100vw;
+  z-index:999999;
+  top:0;
+  left:0;
+}
+.extend-btn{
+  font-size:160%;
+  background:transparent;
+  color:#212121;
+  margin:10px;
+  padding:5px;
+  transition: .3s linear;
+  display: flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-around;
+  box-shadow: 1px 1px #bdbdbd;
+  border-radius:5px;
+  flex-grow:0;
+  z-index:99999;
+}
+ion-icon{
+  font-size: 160%;
+  
+}
+.extend-btn:hover,
+.extend-btn:active{
+  cursor:pointer;
+  opacity:.6;
+  box-shadow: .5px .5px #bdbdbd;
+  border-radius:5px;
+  
+}
+.trips{
+  transform: translate(-30vw,-50vh);
+}
+.trips-display{
+  color:#212121;
+  font-family: 'Open Sans';
+  font-size:120%;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  display:flex;
+  flex-direction:row;
+  list-style:none;
+  transform: translate(-30vw, 1vh);
+  animation: .3s slideToggle ease-in;
+}
+.trips-display li{
+  margin:0 5px;
+}
+
 /*main*/
 .container{
   height:100vh;
@@ -31,28 +92,43 @@ a {
 }
 .text-box{
   display:flex;
-  flex-direction:column;
+  flex-direction:row;
   justify-content:center;
   align-items:center;
-  position: absolute;
-  z-index:99999;
+  list-style:none;
+ padding:0;
+ flex-grow:3;
+ position:absolute;
+ left:42.5vw;
+}
+.buttons{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  width:10vw;
+  flex-grow:0;
+  justify-content: space-around;
 }
 .button-img:active,
 .button-img:link,
-.button-img{
+.button-img,
+.button-size:active,
+.button-size:link,
+.button-size{
   background:transparent;
-  border: 3px solid #fff;
-  padding: 15px 30px;
-  color:#fff;
+  color:#212121;
   transition: .5s linear;
 }
 
 .button-img:hover,
-.button-img:focus{
-  background-color:#fff;
+.button-img:focus,
+.button-size:hover,
+.button-size:focus{
+  background-color:#22222;
   color:#bdbdbd;
   cursor:pointer;
-  outline: none;
+
 }
 
 .display{
@@ -79,5 +155,31 @@ a {
   }
   100%{
     opacity:1
+  }
+}
+@keyframes slideToggle{
+  0%{
+    transform: translate(-30vw, -20vh);
+  }
+  25%{
+    transform: translate(-30vw, -5vh);
+  }
+  50%{
+    transform: translate(-30vw, 0vh);
+  }
+  60%{
+    transform: translate(-30vw, 1vh);
+  }
+  70%{
+    transform: translate(-30vw, 2vh);
+  }
+  75%{
+    transform: translate(-30vw, 3vh);
+  }
+  85%{
+    transform: translate(-30vw, 2vh);
+  }
+  100%{
+    transform: translate(-30vw, 1vh);
   }
 }
