@@ -5,7 +5,11 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Alex & Anna' });
+  res.render('index', { 
+      title: 'Alex & Anna',
+      trips: ['Mallorca' , 'Puerto Rico', 'Costa Rica']});
 });
+
+
 
 module.exports = router;

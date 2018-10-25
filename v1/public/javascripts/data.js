@@ -5,18 +5,25 @@ let url = 'https://photos.app.goo.gl/MzpwHcFA6mjKn8ci1';
 let displayImg = document.querySelectorAll('.display');
 let tripsBtn = document.querySelector('.extend-btn');
 
+let images = [
+    '1.jpg',
+    '2.jpg',
+    '3.jpg',
+    '4.jpg'
+    ];
+
 //change images size
     (() => {
-        let changeSize = () =>{
+        let changeSize = () => {
             let min = 10 , max = 60;
                 Array.from(displayImg).forEach(image => {
                     image.style.flex = (Math.floor(Math.random() * (max - min + 1)) + min) + 'vh';
-                    
-                });
+            });
         };
         button.addEventListener("click", changeSize);  
         changeSize();
     })();
+    
 //change img     
     (() => {
         let changeImg = () => {
@@ -36,6 +43,19 @@ let tripsBtn = document.querySelector('.extend-btn');
                 trips.classList.toggle('trips-display');
             });
     })();
+//galleryMode
+(() => {
+    let galleryMode = () => {
+        setInterval(() => {
+            for(let cur of images){
+                images[cur].style.background = `url("/images/${[images++]}")`;
+                console.log(images[cur]);
+            }
+        },3000);
+    };
+    galleryMode();
+})();
+    
 
 
 
